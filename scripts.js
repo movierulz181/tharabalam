@@ -1,9 +1,13 @@
 const names = [
-    "అశ్విని", "భరణి", "కృత్తిక", "రోహిణి", "మృగశిర", "ఆరుద్ర", 
-    "పునర్వసు", "పుష్య", "ఆశ్లేష", "మఖ", "పుబ్బ", "ఉత్తర", 
-    "హస్త", "చిత్త", "స్వాతి", "విశాఖ", "అనూరాధ", "జ్యేష్ఠ", 
-    "మూల", "పూర్వాషాఢ", "ఉత్తరాషాఢ", "శ్రవణ", "ధనిష్ఠ", "శతభిషం", 
-    "పూర్వాభాద్ర", "ఉత్తరాభాద్ర", "రేవతి"
+    "అశ్విని (చు, చే, చో, ల)", "భరణి (లీ, లూ, లే, లో)", "కృత్తిక (అ, ఈ, ఉ, ఏ)", 
+    "రోహిణి (ఓ, వ, వి, వు)", "మృగశిర (వే, వో, కా, కీ)", "ఆరుద్ర (కూ, ఘ, ఙ, చ)", 
+    "పునర్వసు (కే, కో, హ, హి)", "పుష్యమి (హు, హే, హో, డ)", "ఆశ్లేష (డి, డూ, డే, డో)", 
+    "మఖ (మా, మి, ము, మే)", "పుబ్బ (మో, టా, టి, టూ)", "ఉత్తర (టే, టో, ప, ణ)", 
+    "హస్త (పూ, ష, ణ, ఠ)", "చిత్త (పే, స, రు, రే)", "స్వాతి (రు, రే, రో, త)", 
+    "విశాఖ (తీ, తూ, తే, తో)", "అనూరాధ (న, నీ, నూ, నే)", "జ్యేష్ఠ (నో, య, యి, యూ)", 
+    "మూల (యే, యో, బా, బి)", "పూర్వాషాఢ (బూ, డ, ష, ణ)", "ఉత్తరాషాఢ (బే, బో, జ, జీ)", 
+    "శ్రవణ (జూ, జే, జో, ఘ)", "ధనిష్ఠ (గ, గీ, గు, గే)", "శతభిషం (గో, సా, సి, సూ)", 
+    "పూర్వాభాద్ర (సే, సో, ద, ఢ)", "ఉత్తరాభాద్ర (దే, దో, ఛ, జ)", "రేవతి (ద, ఢ, చ, చి)"
 ];
 
 const dropdown1 = document.getElementById('dropdown1');
@@ -11,14 +15,18 @@ const dropdown2 = document.getElementById('dropdown2');
 
 // Populate dropdowns
 names.forEach((name, index) => {
+    const nakshatraName = name.split(' ')[0]; // Extract only the Nakshatra name
+
+    // Dropdown 1 with full names
     const option1 = document.createElement('option');
     option1.value = index + 1;
     option1.text = `${index + 1} ${name}`;
     dropdown1.add(option1);
     
+    // Dropdown 2 with Nakshatra names only
     const option2 = document.createElement('option');
     option2.value = index + 1;
-    option2.text = `${index + 1} ${name}`;
+    option2.text = `${index + 1} ${nakshatraName}`;
     dropdown2.add(option2);
 });
 
